@@ -1,0 +1,14 @@
+* {
+
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+max-width: 100%;
+background-color: whitesmoke;
+}
+
+.questionContainer{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    
+    
+}
