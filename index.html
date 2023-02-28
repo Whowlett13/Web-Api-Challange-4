@@ -1,9 +1,7 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Code Quiz</title>
@@ -11,36 +9,61 @@
 
 <body>
     <header>
-        <section id="scoreCounter">
-<input type="button" value="View High Scores" onclick="view_high_scores()"><br>
-Score: <var id score=""score> </var>
+        <a id=leaderboard-link>View Highscores <i class="fas fa-hand-point-left fa-lg"></i>
+            </i></a>
 
-        </section>
-
-        <section>
-
-
-        </section>
-
-
+        <time>Time: <span id="time"></span></time>
     </header>
 
+    <main>
+        <div id=start-card class="card">
+            <h1>Welcome to the Code Quiz!</h1>
+            <p>Try to answer the following code related questions with in 1 Minute.</p>
+            <p>Each Wrong Answer Removes 10 Seconds Off The Clock!</p>
+            <p>Your Mission, Should You Chose To Accept It, Is To Complete The Code Quiz With The Highest Score!
+                Good luck, Coder.</p>
+            <button id="start-button" class="button">Begin Quiz</button>
+        </div>
 
+        <div hidden id=question-card class="card">
 
-    <div id="#questionContainer" class="questionContainer">
-        <h1>Welcome to the Code Quiz!</h1>
-        <p>Try to answer the following code related questions with in 1 Minute.</p>
-        <p>Each Wrong Answer Removes 5 Seconds Off The Clock!</p>
-        <p>Your Mission, Should You Chose To Accept It, Is To Complete The Code Quiz With The Highest Score!
-            Good luck, Coder.</p>
-    </div>
+            <h2 id=question-text></h2>
 
+            <div id=quiz-options>
+                <button id=option0 class="button option-button"></button>
+                <button id=option1 class="button option-button"></button>
+                <button id=option2 class="button option-button"></button>
+                <button id=option3 class="button option-button"></button>
+            </div>
 
+            <div id=result-div>
+                <hr>
+                <p id=result-text></p>
+            </div>
 
+        </div>
 
+        <div hidden id=score-card class="card">
+            <h2>All done!</h2>
+            <p>Your final score is <span id=score></span>.</p>
+            <form class="inline-form" id="submission-form">
+                <label for="initials">Enter initials: </label>
+                <input type="text" id="initials">
+                <button id="submit-button" class="button">Submit</button>
+            </form>
+        </div>
 
+        <div hidden id=leaderboard-card class="card">
+            <h2>Highscores</h2>
+            <ol id="highscore-list">
+            </ol>
+            <div class="inline-buttons">
+                <button id="back-button" class="button">Go Back</button>
+                <button id="clear-button" class="button">Clear Highscores</button>
+            </div>
+        </div>
 
-
+    </main>
 
     <script src="./script.js"></script>
 </body>
