@@ -13,7 +13,8 @@ body {
     justify-content: space-between;
     background-color: #006D75;
     color: #ffffff;
-    padding: 5px;
+    padding: 10px;
+    
   }
   
 
@@ -37,7 +38,7 @@ body {
     color: #ffffff;
     background-color: #006D75;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: none;
   }
   
@@ -90,7 +91,7 @@ body {
     padding: 3px;
   }
   
-  /* Leaderboard Card Styles */
+  
   
   #back-button {
     margin-right: 8px;
@@ -113,6 +114,7 @@ body {
     
     a:hover {
       color: whitesmoke;
+    
     }
   
     button:hover {
