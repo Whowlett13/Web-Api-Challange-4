@@ -202,7 +202,7 @@ function storeScore(event) {
 
 function updateStoredLeaderboard(leaderboardItem) {
     let leaderboardArray = getLeaderboard();
-    //append new leaderboard item to leaderboard array
+    
     leaderboardArray.push(leaderboardItem);
     localStorage.setItem("leaderboardArray", JSON.stringify(leaderboardArray));
 }
@@ -258,7 +258,7 @@ function clearHighscores() {
 const backButton = document.querySelector("#back-button");
 backButton.addEventListener("click", returnToStart);
 
-//Hide leaderboard card show start card
+
 function returnToStart() {
     hideCards();
     startCard.removeAttribute("hidden");
