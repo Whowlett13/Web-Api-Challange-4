@@ -35,8 +35,8 @@ var questions = [
     {
         questionText:
             "Which of the following is a statement that can be used to terminate a loop, switch or label statement?",
-        options: ["1. break", "2. Stop", "3. Back", "4. Exit"],
-        answer: "1. break",
+        options: ["1. Break", "2. Stop", "3. Back", "4. Exit"],
+        answer: "1. Break",
     },
 ];
 
@@ -46,7 +46,7 @@ var questionCard = document.querySelector("#question-card");
 var scoreCard = document.querySelector("#score-card");
 var leaderboardCard = document.querySelector("#leaderboard-card");
 
-//hide all cards
+
 function hideCards() {
     startCard.setAttribute("hidden", true);
     questionCard.setAttribute("hidden", true);
@@ -70,7 +70,7 @@ var currentQuestion;
 document.querySelector("#start-button").addEventListener("click", startQuiz);
 
 function startQuiz() {
-    //hide any visible cards, show the question card
+    
     hideCards();
     questionCard.removeAttribute("hidden");
 
@@ -78,17 +78,17 @@ function startQuiz() {
     currentQuestion = 0;
     displayQuestion();
 
-    //set total time depending on number of questions
+    
     time = questions.length * 10;
 
-    //executes function "countdown" every 1000ms to update time and display on page
+    
     intervalID = setInterval(countdown, 1000);
 
-    //invoke displayTime here to ensure time appears on the page as soon as the start button is clicked, not after 1 second
+    
     displayTime();
 }
 
-//reduce time by 1 and display new value, if time runs out then end quiz
+
 function countdown() {
     time--;
     displayTime();
@@ -97,13 +97,13 @@ function countdown() {
     }
 }
 
-//display time on page
+
 var timeDisplay = document.querySelector("#time");
 function displayTime() {
     timeDisplay.textContent = time;
 }
 
-//display the question and answer options for the current question
+
 function displayQuestion() {
     let question = questions[currentQuestion];
     let options = question.options;
@@ -219,7 +219,7 @@ function getLeaderboard() {
     return leaderboardArray;
 }
 
-//display leaderboard on leaderboard card
+
 function renderLeaderboard() {
     let sortedLeaderboardArray = sortLeaderboard();
     const highscoreList = document.querySelector("#highscore-list");
@@ -233,7 +233,7 @@ function renderLeaderboard() {
     }
 }
 
-//sort leaderboard array from highest to lowest
+
 function sortLeaderboard() {
     let leaderboardArray = getLeaderboard();
     if (!leaderboardArray) {
@@ -249,7 +249,7 @@ function sortLeaderboard() {
 const clearButton = document.querySelector("#clear-button");
 clearButton.addEventListener("click", clearHighscores);
 
-//clear local storage and display empty leaderboard
+
 function clearHighscores() {
     localStorage.clear();
     renderLeaderboard();
@@ -258,13 +258,13 @@ function clearHighscores() {
 const backButton = document.querySelector("#back-button");
 backButton.addEventListener("click", returnToStart);
 
-//Hide leaderboard card show start card
+
 function returnToStart() {
     hideCards();
     startCard.removeAttribute("hidden");
 }
 
-//use link to view highscores from any point on the page
+
 const leaderboardLink = document.querySelector("#leaderboard-link");
 leaderboardLink.addEventListener("click", showLeaderboard);
 
@@ -272,13 +272,13 @@ function showLeaderboard() {
     hideCards();
     leaderboardCard.removeAttribute("hidden");
 
-    //stop countdown
+    
     clearInterval(intervalID);
 
-    //assign undefined to time and display that, so that time does not appear on page
+    
     time = undefined;
     displayTime();
 
-    //display leaderboard on leaderboard card
+    
     renderLeaderboard();
 }
